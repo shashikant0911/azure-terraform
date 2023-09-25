@@ -83,3 +83,9 @@ resource "azurerm_virtual_machine" "devopsvm" {
   os_profile_windows_config {
   }
 }
+backend "azurerm" {
+    resource_group_name =  "devops-infra"
+    storage_account_name = "devopststate"
+    container_name = "tstate"
+    key = ""
+}
